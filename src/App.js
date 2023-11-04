@@ -12,10 +12,10 @@ function App() {
       /> */}
       <MultiCarousel
         images={[
-          "/images/honey.jpg",
-          "/images/honey-farm.jpg",
-          "/images/IMG_4568.jpg",
-          "/images/IMG_4586.jpg",
+          "images/image-1.png",
+          "images/image-2.png",
+          "images/image-3.png",
+          "images/image-4.png",
         ]}
         width="400"
         height="300"

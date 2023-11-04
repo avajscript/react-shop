@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --lt-grey: #f2f2f2;
+  --black: #232323;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,7 +16,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+// Widgets
+.zoom-widget {
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 8px;
+  }
+  .zoom-level {
+    border: 1px solid var(--lt-grey);
+    padding: 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border 0.25s ease;
+    &:hover {
+      border-color: var(--black);
+    }
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -16,8 +43,17 @@ html {
   padding: 32px;
 }
 
+.box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 .multi-carousel {
+  overflow: hidden;
+  @extend .box-shadow;
   width: 400px;
+  border: 1px solid var(--lt-grey);
+  padding: 16px;
+
   img {
     object-fit: cover;
   }
@@ -27,12 +63,17 @@ html {
 }
 
 .preview-image {
+  position: relative;
+  top: 0px;
+  left: 0px;
   background-position: center center;
   width: 200px;
   height: 200px;
   background-size: cover;
   transition: background-size 0.25s ease;
   cursor: pointer;
+  margin-bottom: 8px;
+  z-index: 0;
 }
 
 .carousel-prev {
@@ -55,4 +96,64 @@ html {
       opacity: 1;
     }
   }
+}
+
+.carousel-bottom-section {
+  background-color: #fff;
+  z-index: 2;
+}
+// Animations
+
+@keyframes top-to-bottom {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.top-to-bottom-anim {
+  animation: top-to-bottom 0.5s ease;
+}
+
+@keyframes bottom-to-top {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.bottom-to-top-anim {
+  animation: bottom-to-top 0.5s ease;
+}
+
+@keyframes left-to-right {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.left-to-right-anim {
+  animation: left-to-right 0.5s ease;
+}
+
+@keyframes right-to-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+.right-to-left-anim {
+  animation: right-to-left 0.5s ease;
 }
