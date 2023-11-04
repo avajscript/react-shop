@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+html {
+  padding: 32px;
+}
+
+.multi-carousel {
+  width: 400px;
+}
+.multi-carousel img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.multi-carousel .previews {
+  display: flex;
+}
+
+.preview-image {
+  background-position: center center;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  transition: background-size 0.25s ease;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  height: 80px;
+  flex: 1;
+  margin-right: 8px;
+}
+.carousel-prev:last-of-type {
+  margin-right: 0;
+}
+.carousel-prev img {
+  width: 100%;
+  height: 100%;
+  margin-right: 8px;
+}
+.carousel-prev--not-selected {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+.carousel-prev--not-selected:hover {
+  opacity: 1;
+}/*# sourceMappingURL=styles.css.map */
