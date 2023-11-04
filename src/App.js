@@ -1,4 +1,3 @@
-import Carousel from "./components/Carousel";
 import MultiCarousel from "./components/MultiCarousel";
 
 function App() {
