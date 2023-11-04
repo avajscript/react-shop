@@ -13,9 +13,9 @@ function App() {
       <MultiCarousel
         images={[
           "images/image-1.png",
-          "images/image-2.png",
-          "images/image-3.png",
-          "images/image-4.png",
+          "images/image-2.jpg",
+          "images/image-3.jpg",
+          "images/image-4.jpg",
         ]}
         width="400"
         height="300"
