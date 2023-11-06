@@ -11,7 +11,8 @@ const MultiCarousel = ({
   const [zoomLevel, setZoomLevel] = React.useState(1);
   // set the main preview image
   const [image, setImage] = React.useState(images[0] || "");
-
+  // image ratio width / height
+  const [imageRatio, setImageRatio] = React.useState(1);
   // ref to get/set main image attributes
   const imgRef = useRef(null);
 
@@ -19,6 +20,9 @@ const MultiCarousel = ({
   // and checks to see if they are the selected one for styling
   const selectImage = (imgArg) => {
     setImage(imgArg);
+    let img = new Image();
+    img.src = imgArg;
+    setImageRatio(img.width / img.height);
     setImgPreviews(
       // map over images provided by user
       images.map((img) => {
@@ -68,10 +72,22 @@ const MultiCarousel = ({
       x: e.pageX - e.currentTarget.offsetLeft,
       y: e.pageY - e.currentTarget.offsetTop,
     };
+
+  
+   console.log(imageRatio);
     // set the zoom level based on zoom level
-    imgRef.current.style.backgroundSize = `${100 * (zoomLevel + 1)}% ${
-      100 * (zoomLevel + 1)
-    }%`;
+    if(imageRatio < 1) {
+      imgRef.current.style.backgroundSize = `${(100 * (zoomLevel + 1)) * imageRatio}% ${
+        (100 * (zoomLevel + 1) / imageRatio)
+      }%`;
+    } else {
+      imgRef.current.style.backgroundSize = `${(100 * (zoomLevel + 1)) }% ${
+        (100 * (zoomLevel + 1) )
+      }%`;
+    }
+    
+
+    //console.log(imgRef);
     // set the background position based on mouse cursor position
     imgRef.current.style.backgroundPosition = `${(mousePos.x / width) * 100}% ${
       (mousePos.y / height) * 100
