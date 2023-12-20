@@ -5,7 +5,9 @@
 
 :root {
   --lt-grey: #f2f2f2;
+  --grey: #cbc7c7;
   --black: #232323;
+  --blue: #5a90e3;
 }
 
 body {
@@ -52,8 +54,7 @@ html {
   padding: 16px;
 }
 .multi-carousel img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .multi-carousel .previews {
   display: flex;
@@ -98,6 +99,41 @@ html {
 .carousel-bottom-section {
   background-color: #fff;
   z-index: 2;
+}
+
+.product-list .product {
+  margin-right: 16px;
+}
+.product-list .products {
+  display: flex;
+  flex-direction: row;
+}
+
+.product {
+  background-color: var(--lt-grey);
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+.product h3 {
+  margin-bottom: 8px;
+}
+.product p {
+  margin-bottom: 8px;
+}
+.product h3,
+.product p {
+  color: var(--blue);
+}
+.product b {
+  color: var(--black);
+}
+.product:hover {
+  background-color: var(--grey);
+}
+.product:hover h3,
+.product:hover h3 + p {
+  text-decoration: underline;
 }
 
 @keyframes top-to-bottom {
@@ -146,4 +182,87 @@ html {
 }
 .right-to-left-anim {
   animation: right-to-left 0.5s ease;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-icon {
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.pagination-icon:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  border-spacing: 4px;
+  font-weight: bold;
+}
+
+.selected {
+  border-bottom: 1px solid black;
+  border-spacing: 4px;
+}
+.selected:hover {
+  cursor: default;
+  font-weight: 400;
+}
+
+.contrast:hover {
+  color: var(--black);
+  cursor: pointer;
+}
+
+.sort-box {
+  border: 2px solid var(--blue);
+  padding: 8px 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.active-sort-box {
+  background-color: var(--blue);
+  cursor: default;
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.active-sort-box h5 {
+  color: #fff;
+}
+
+.mar-right-8 {
+  margin-right: 8px;
+}
+
+.mar-left-8 {
+  margin-left: 8px;
+}
+
+.mar-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.mar-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=styles.css.map */
