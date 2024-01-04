@@ -3,6 +3,8 @@ import MultiCarousel from "./components/MultiCarousel";
 import Product from "./components/Product";
 import ProductList from "./components/ProductList";
 import Pagination from "./components/navigation/Pagination";
+import SearchBar from "./components/inputs/SearchBar";
+import Dropdown from "./components/Dropdown";
 
 function App() {
     const products = [
@@ -31,8 +33,11 @@ function App() {
             url="images/product.png"
         />,
     ];
-
+    // used for demoing pagination
     const [page, setPage] = useState(1);
+
+    // used for demoing searchbar
+    const [text, setText] = useState("");
 
     return (
         <div className="App">
@@ -53,9 +58,16 @@ function App() {
         height="300"
         alt="Honey"
       /> */}
-            <ProductList products={products} />
+            {/*<ProductList products={products} />*/}
 
-            <Pagination pages={20} page={page} setPage={setPage} />
+            {/*<Pagination pages={20} page={page} setPage={setPage} />*/}
+
+            {/*<SearchBar text={text} setText={setText} />*/}
+            <Dropdown title="Dropdowns">
+                <Dropdown title="Navigation" />
+                <Dropdown title="Inputs" />
+                <Dropdown title="Colors" />
+            </Dropdown>
         </div>
     );
 }

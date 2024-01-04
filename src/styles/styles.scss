@@ -286,3 +286,56 @@ html {
   flex-wrap: wrap;
 }
 // End of flex
+
+// Searchbar
+.searchbar-holder {
+  border: 1px solid var(--black);
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  &:focus-within {
+    outline: 2px solid var(--blue);
+  }
+  input[type=text] {
+    flex-basis: 100%;
+    border: none;
+    padding: 4px 8px;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// End of searchbar
+
+
+// Dropdown
+.dropdown {
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+.dropdown-header {
+  display: flex;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color .25s ease;
+  .dropdown-icon {
+    margin-right: 8px;
+    transition: transform .25s ease;
+  }
+  &:hover {
+    background-color: var(--lt-grey);
+  }
+}
+
+.dropdown-content {
+  transition: all .25s ease;
+  overflow: hidden;
+  max-height: 0;
+  padding-left: 16px;
+}
+
+// End of dropdown

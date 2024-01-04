@@ -265,4 +265,50 @@ html {
   flex-wrap: wrap;
 }
 
+.searchbar-holder {
+  border: 1px solid var(--black);
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.searchbar-holder:focus-within {
+  outline: 2px solid var(--blue);
+}
+.searchbar-holder input[type=text] {
+  flex-basis: 100%;
+  border: none;
+  padding: 4px 8px;
+  font-size: 16px;
+}
+.searchbar-holder input[type=text]:focus {
+  outline: none;
+}
+
+.dropdown {
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+.dropdown-header {
+  display: flex;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+.dropdown-header .dropdown-icon {
+  margin-right: 8px;
+  transition: transform 0.25s ease;
+}
+.dropdown-header:hover {
+  background-color: var(--lt-grey);
+}
+
+.dropdown-content {
+  transition: all 0.25s ease;
+  overflow: hidden;
+  max-height: 0;
+  padding-left: 16px;
+}
+
 /*# sourceMappingURL=styles.css.map */
